@@ -1,0 +1,22 @@
+Paciente: P-001
+Data: 30/10/2026
+Sessao: 03
+Queixa principal: dor lombar baixa, pior ao sentar por muito tempo e ao levantar da cadeira.
+
+S:
+Paciente refere melhora parcial desde a ultima sessao. Relata dor 4/10 ao sentar por mais de 30 min. Antes relatava 7/10. Diz que conseguiu fazer os exercicios em casa 2x na semana, mas esqueceu em alguns dias por rotina corrida. Relata medo de "travar" ao pegar peso no chao. Nega irradiação no momento. Refere melhora para levantar da cama pela manha.
+
+O:
+Chegou andando sem auxilio. Sem queixa importante durante marcha. Realizados exercicios de mobilidade lombopelvica, ponte, ativacao de gluteo medio, dissociacao quadril/lombar e treino de sentar-levantar. Boa tolerancia geral. Referiu desconforto leve no final do treino de sentar-levantar, sem piora sustentada. Necessitou correcao verbal para controle de tronco e respiracao. Orientado manter exercicios domiciliares 3x/semana e observar resposta nas proximas 24h.
+
+Pontos importantes:
+- Dor reduziu de 7/10 para 4/10 segundo relato.
+- Adesao parcial aos exercicios.
+- Medo de pegar peso ainda presente.
+- Melhorou levantar da cama.
+- Precisa reavaliar dor ao sentar e confianca para flexao/levantamento.
+
+Pendencias:
+- Nao foi aplicado questionario funcional porque ele nao soube responder as perguntas.
+- Nao foi registrada escala de medo/evitacao.
+- Nao foi medido tempo exato de tolerancia sentado alem do relato.

@@ -1,0 +1,73 @@
+{
+  "patient_memory": [
+    "Paciente P-001 com dor lombar baixa, pior ao sentar por muito tempo e ao levantar da cadeira (queixa atual).",
+    "Paciente refere reducao da dor ao sentar prolongado de 7/10 para 4/10 desde a ultima sessao.",
+    "Paciente apresenta medo de \"travar\" ao pegar peso no chao, ainda presente.",
+    "Adesao aos exercicios domiciliares referida como parcial (realizou 2x na semana, esqueceu em alguns dias).",
+    "Melhora referida para levantar da cama pela manha."
+  ],
+  "observed_facts": [
+    "Paciente refere melhora parcial desde a ultima sessao.",
+    "Paciente relata dor 4/10 ao sentar por mais de 30 min, antes relatava 7/10.",
+    "Paciente diz que conseguiu fazer os exercicios em casa 2x na semana, mas esqueceu em alguns dias por rotina corrida (adesao parcial).",
+    "Paciente relata medo de \"travar\" ao pegar peso no chao, ainda presente.",
+    "Paciente nega irradiação no momento.",
+    "Paciente refere melhora para levantar da cama pela manha.",
+    "Paciente chegou andando sem auxilio.",
+    "Sem queixa importante durante marcha segundo observacao na sessao.",
+    "Foram realizados exercicios de mobilidade lombopelvica, ponte, ativacao de gluteo medio, dissociacao quadril/lombar e treino de sentar-levantar.",
+    "Paciente apresentou boa tolerancia geral aos exercicios realizados.",
+    "Paciente referiu desconforto leve no final do treino de sentar-levantar, sem piora sustentada.",
+    "Paciente necessitou correcao verbal para controle de tronco e respiracao durante o treino.",
+    "Paciente foi orientado a manter exercicios domiciliares 3x/semana e observar resposta nas proximas 24h.",
+    "Profissional registrou que dor reduziu de 7/10 para 4/10 segundo relato do paciente.",
+    "Profissional registrou que o medo de pegar peso ainda esta presente.",
+    "Profissional registrou melhora para levantar da cama.",
+    "Profissional indicou necessidade de reavaliar dor ao sentar e confianca para flexao/levantamento.",
+    "Nao foi aplicado questionario funcional porque o paciente nao soube responder as perguntas (pendente).",
+    "Nao foi registrada escala de medo/evitacao (pendente).",
+    "Nao foi medido tempo exato de tolerancia sentado alem do relato (pendente)."
+  ],
+  "professional_hypotheses": [
+    "nenhuma hipotese registrada"
+  ],
+  "information_gaps": [
+    "Objetivo do paciente nao informado - registrar nas palavras do paciente.",
+    "Questionario funcional nao informado na avaliacao desta sessao (nao foi aplicado porque o paciente nao soube responder as perguntas).",
+    "Escala de medo/evitacao nao registrada (nao avaliado formalmente nesta sessao).",
+    "Tempo exato de tolerancia sentado nao medido (nao avaliado com medida objetiva, apenas relato subjetivo).",
+    "Instrumentos a considerar (sugestao): questionario funcional padronizado adequado ao entendimento do paciente; escala de medo/evitacao para carga/flexao lombar; medida objetiva do tempo de tolerancia sentado."
+  ],
+  "revisable_clinical_evolution": [
+    "Relato de reducao da dor ao sentar prolongado de 7/10 para 4/10 permanece consistente com a evolucao referida pelo paciente.",
+    "Mantenho registro de que o paciente segue com medo de pegar peso do chao, em avaliacao quanto a impacto funcional e comportamental.",
+    "Constato boa tolerancia aos exercicios de mobilidade, ponte, ativacao de gluteo medio, dissociacao quadril/lombar e treino de sentar-levantar na sessao, com apenas desconforto leve no final do treino de sentar-levantar, sem piora sustentada.",
+    "Registro que a adesao aos exercicios domiciliares foi parcial (2x/semana, com esquecimentos por rotina corrida), em avaliacao quanto a impacto na evolucao da dor.",
+    "Reconheco pendencia de aplicacao de questionario funcional, escala de medo/evitacao e medida objetiva do tempo de tolerancia sentado, a serem reavaliados em proxima sessao."
+  ],
+  "reminders": [
+    "Verificar e registrar objetivo do paciente nas palavras dele.",
+    "Reavaliar intensidade de dor ao sentar (escala numerica) e tempo exato de tolerancia sentado com medida objetiva.",
+    "Reavaliar medo de pegar peso do chao e confianca para flexao/levantamento.",
+    "Considerar reaplicar ou adaptar questionario funcional de forma que o paciente consiga responder.",
+    "Aplicar e registrar escala de medo/evitacao adequada.",
+    "Revisar adesao aos exercicios domiciliares, inclusive frequencia real e barreiras relatadas.",
+    "Observar e registrar novamente a resposta do paciente aos exercicios realizados na sessao anterior (incluindo treino de sentar-levantar)."
+  ],
+  "follow_up_questions": [
+    "Voce percebeu alguma mudanca na dor ao sentar por mais de 30 minutos desde a ultima sessao? Se possivel, descreva a intensidade aproximada (em uma escala de 0 a 10).",
+    "Conseguiu manter os exercicios domiciliares conforme combinado (3x/semana)? Quantas vezes conseguiu fazer desde a ultima sessao?",
+    "Notou alguma mudanca no medo de \"travar\" ao pegar peso no chao nas ultimas 24h ou dias? Poderia descrever como foi?",
+    "Percebeu alguma diferenca para levantar da cama pela manha desde a ultima consulta?",
+    "Houve alguma piora sustentada da dor ou desconforto nas 24h seguintes aos exercicios da ultima sessao?"
+  ],
+  "patient_goal": null,
+  "goal_progress": [],
+  "new_achievements": [
+    "Paciente relata reducao da dor ao sentar prolongado de 7/10 para 4/10 desde a ultima sessao.",
+    "Paciente refere melhora para levantar da cama pela manha.",
+    "Paciente realizou exercicios domiciliares em casa 2x na semana, indicando algum nivel de adesao mesmo com rotina corrida.",
+    "Na sessao, paciente apresentou boa tolerancia geral aos exercicios propostos, com apenas desconforto leve no final do treino de sentar-levantar, sem piora sustentada."
+  ],
+  "safety_note": "Rascunho sujeito à revisao, complementacao e validacao pelo profissional responsavel antes de qualquer utilizacao clinica."
+}

@@ -1,0 +1,11 @@
+{
+  "name": "lca-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "MVP privativo do copiloto clinico-operacional LCA (dados ficticos)",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test tests/"
+  }
+}
