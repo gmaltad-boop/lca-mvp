@@ -8,3 +8,6 @@
 - 22:06:02Z S1 inicio: POC ai-memory (max 2 iteracoes)
 - 22:06:02Z S1 install rc=1 | ai-memory install: downloading ai-memory-linux-x86_64.tar.gz (latest) | ai-memory install: error: curl or wget is required
 - 22:06:02Z S1 binario: None
+- 22:06:11Z PUSH ok SHA=f09ad391d5 | SP-4: POC ai-memory BLOCKED (sem binario) com evidencias
+- 22:06:11Z S2 inicio: retries skillsmp/pt + start.me
+- 22:06:12Z S2 fim: skillsmp-pt: HTTP 200, 327583 bytes; texto: 224850 chars | amostra:  Catálogo de Agent Skills | Codex e Claude | SkillsMP window.CONFIG = { | startme: HTTP 200, 40706 bytes; texto: 23547 chars | amostra:  (function () { try { var session = JSON.parse(localStorage.getItem('se
