@@ -67,5 +67,6 @@
     }
   ],
   "id": "SEED-T002-v1",
-  "versao": "v1.1"
+  "versao": "v1.2",
+  "afirmacao": "Registro reconstruido do fechamento da missao T-002 (5 conversas, 6 itens, US$ 0,3683 autodeclarado) servindo de ancora unica para os testes A (ai-memory) e B (mem0)."
 }
