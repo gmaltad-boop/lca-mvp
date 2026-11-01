@@ -1,0 +1,44 @@
+{
+  "id_seed": "SEED-T002-v1",
+  "schema": "PROTOCOLO-MEMORIA-v1",
+  "autor": "Drael",
+  "data_UTC": "2026-11-01 21:44 UTC",
+  "tipo": "fator_reconstruido",
+  "fonte": [
+    "docs/missions/T-002-missao-2-TASK.md @ main (contrato da missão, verbatim)",
+    "registro de fechamento T-002 (conversa Drael×Guilherme, 2026-11-01)"
+  ],
+  "N": 1,
+  "status": "ativo",
+  "limite": "validade até conferência contra o JSON original do fechamento com o Codex (21:50 BRT); divergência encontrada gera tipo=correção com N=1",
+  "verificação": "diff manual seed × original do fechamento; asserções V1–V8 do protocolo",
+  "nota_proveniencia": "Reconstrução honesta: o JSON literal do fechamento não estava no repo nem nos dumps locais nesta janela; este seed reúne o contrato verbatim + fatos do fechamento com origem declarada. Não é alegação nova.",
+  "missao": {
+    "id": "T-002",
+    "objetivo": "provar execução fiel das MÃOS sobre UM material, sem gerar informação nova",
+    "executor_declarado": "OpenHands 1.34.0",
+    "entrada": "subido-ricotta-bruno-2026-10-31.md",
+    "saida_unica": "missao-2-extracao.md",
+    "volume": ">=8 linhas, alvo de paridade com os 12 modelos da missão-1",
+    "conclusao_contrato": "arquivo completo conforme contrato -> parar; sem extras, sem instalações, sem rede além da API"
+  },
+  "fechamento": {
+    "status": "encerrada",
+    "conversas": 5,
+    "itens_entregues": 6,
+    "custo_autodeclarado": "US$ 0,3683 — relato do agente, NÃO fatura (fica marcado como relato até fatura)",
+    "data_fechamento": "2026-11-01"
+  },
+  "vinculos": [
+    {"id": "V1", "regra": "divergência em duas linhas separadas, ambas as escolas, sem média", "detalhe": "39:27 Chorane/C2G x 40:38-42:05 Ricotta/Mestre"},
+    {"id": "V2", "regra": "churn 27% [75:28] = relato não verificado", "detalhe": "equipe de tráfego; nunca alegação sustentada"},
+    {"id": "V3", "regra": "10x = relato de custo, não meta aprovada de slot LCA"},
+    {"id": "V4", "regra": "fontes de marketing digital -> transferência é hipótese; SubidoCast != G4"},
+    {"id": "V5", "regra": "atribuição inferida marcada 'atribuída por contexto'"},
+    {"id": "V6", "regra": "executor nada escreve no Notion durante a missão"}
+  ],
+  "identidade_e_tempo": [
+    {"id": "V7", "regra": "modelo executado por metadado (gpt-5.1 confirmado; gpt-4.1-mini = candidato do 401 revogado)"},
+    {"id": "V8", "regra": "todo dado de fonte carrega minuto verificável (mm:ss)"}
+  ]
+}
