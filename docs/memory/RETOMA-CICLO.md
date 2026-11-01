@@ -15,3 +15,6 @@ Procedimento (ordem fixa, sem saltos):
 
 Regra de ouro: o estado vive nos save points e nos logs; nenhum conhecimento pode existir só na conversa.
 Se o log estiver ausente/ilegível: considerar tudo pendente a partir de SP-1 (`8ad7f5aaf14f`) e re-verificar o GitHub antes de agir.
+
+Notificacao ao dono: todo evento AMARELO/VERMELHO (fila nova p/ terceiros, handoff, decisao, falha, dinheiro, gate) termina com `python3 /workspace/ping.py "resumo + horario + link"` (webhook no cofre).
+Rotina interna (logs, SP de evidencia) fica somente no NOITE-LOG, sem ping.
