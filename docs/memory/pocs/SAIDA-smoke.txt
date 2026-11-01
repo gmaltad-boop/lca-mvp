@@ -1,0 +1,17 @@
+CONNECT ok | server: {"name":"mcp-servers/everything","title":"Everything Reference Server","version":"1.0.0"} | 475 ms
+PING: {}
+TOOLS(13): echo, get-annotated-message, get-env, get-resource-links, get-resource-reference, get-structured-content, get-sum, get-tiny-image, gzip-file-as-resource, toggle-simulated-logging, toggle-subscriber-updates, trigger-long-running-operation, simulate-research-query
+  schema echo : {"type":"object","properties":{"message":{"type":"string","description":"Message to echo"}},"required":["message"],"$schema":"http://json-schema.org/draft-07/sc
+  schema get-annotated-message : {"type":"object","properties":{"messageType":{"type":"string","enum":["error","success","debug"],"description":"Type of message to demonstrate different annotat
+  schema get-env : {"type":"object","properties":{},"$schema":"http://json-schema.org/draft-07/schema#"}
+  schema get-resource-links : {"type":"object","properties":{"count":{"default":3,"description":"Number of resource links to return (1-10)","type":"number","minimum":1,"maximum":10}},"$schem
+  schema get-resource-reference : {"type":"object","properties":{"resourceType":{"default":"Text","type":"string","enum":["Text","Blob"]},"resourceId":{"default":1,"description":"ID of the text 
+  schema get-structured-content : {"type":"object","properties":{"location":{"type":"string","enum":["New York","Chicago","Los Angeles"],"description":"Choose city"}},"required":["location"],"$s
+ECHO in : V1-divergencia-2-linhas|V2-churn27-relato|V3-10x-custo|V4-subidocast-ne-G4|V5-atribuicao-contexto|V6-executor-nao-notion|V7-modelo-metadado|V8-minuto-verificavel
+ECHO out: "Echo: V1-divergencia-2-linhas|V2-churn27-relato|V3-10x-custo|V4-subidocast-ne-G4|V5-atribuicao-contexto|V6-executor-nao-notion|V7-modelo-metadado|V8-minuto-verificavel"
+SUM(2,3) -> "The sum of 2 and 3 is 5."
+RESOURCES: 7
+CLOSE ok | total 840 ms | VEREDITO: PASS-MCP-SMOKE
+
+--- stderr ---
+Starting default (STDIO) server...

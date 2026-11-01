@@ -1,5 +1,4 @@
 {
-  "id_seed": "SEED-T002-v1",
   "schema": "PROTOCOLO-MEMORIA-v1",
   "autor": "Drael",
   "data_UTC": "2026-11-01 21:44 UTC",
@@ -30,15 +29,43 @@
     "data_fechamento": "2026-11-01"
   },
   "vinculos": [
-    {"id": "V1", "regra": "divergência em duas linhas separadas, ambas as escolas, sem média", "detalhe": "39:27 Chorane/C2G x 40:38-42:05 Ricotta/Mestre"},
-    {"id": "V2", "regra": "churn 27% [75:28] = relato não verificado", "detalhe": "equipe de tráfego; nunca alegação sustentada"},
-    {"id": "V3", "regra": "10x = relato de custo, não meta aprovada de slot LCA"},
-    {"id": "V4", "regra": "fontes de marketing digital -> transferência é hipótese; SubidoCast != G4"},
-    {"id": "V5", "regra": "atribuição inferida marcada 'atribuída por contexto'"},
-    {"id": "V6", "regra": "executor nada escreve no Notion durante a missão"}
+    {
+      "id": "V1",
+      "regra": "divergência em duas linhas separadas, ambas as escolas, sem média",
+      "detalhe": "39:27 Chorane/C2G x 40:38-42:05 Ricotta/Mestre"
+    },
+    {
+      "id": "V2",
+      "regra": "churn 27% [75:28] = relato não verificado",
+      "detalhe": "equipe de tráfego; nunca alegação sustentada"
+    },
+    {
+      "id": "V3",
+      "regra": "10x = relato de custo, não meta aprovada de slot LCA"
+    },
+    {
+      "id": "V4",
+      "regra": "fontes de marketing digital -> transferência é hipótese; SubidoCast != G4"
+    },
+    {
+      "id": "V5",
+      "regra": "atribuição inferida marcada 'atribuída por contexto'"
+    },
+    {
+      "id": "V6",
+      "regra": "executor nada escreve no Notion durante a missão"
+    }
   ],
   "identidade_e_tempo": [
-    {"id": "V7", "regra": "modelo executado por metadado (gpt-5.1 confirmado; gpt-4.1-mini = candidato do 401 revogado)"},
-    {"id": "V8", "regra": "todo dado de fonte carrega minuto verificável (mm:ss)"}
-  ]
+    {
+      "id": "V7",
+      "regra": "modelo executado por metadado (gpt-5.1 confirmado; gpt-4.1-mini = candidato do 401 revogado)"
+    },
+    {
+      "id": "V8",
+      "regra": "todo dado de fonte carrega minuto verificável (mm:ss)"
+    }
+  ],
+  "id": "SEED-T002-v1",
+  "versao": "v1.1"
 }
