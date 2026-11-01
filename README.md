@@ -47,3 +47,10 @@ Botão "Apagar dados locais" na tela de pacientes, ou:
 - public/              interface (três telas: pacientes, timeline, revisão)
 - tests/               testes offline (node:test) + caso-âncora e saída de referência
 - smoke/live-t0.mjs    execução real do caso-âncora contra a API (gera a referência)
+
+## Executor local e prova T-002
+
+A configuração experimental do executor OpenHands e as evidências da POC estão em [ops/local-agent](ops/local-agent/README.md). Comece pelo [guia simples de configuração, pendências e revisão](docs/AGENTE-LCA-CONFIGURACAO-E-REVISAO.md).
+
+A POC supervisionada produziu seis análises a partir de oito trechos selecionados de uma fonte. Ela não comprova autonomia ampla, leitura integral ou validação do produto. Credenciais, estado do aplicativo e transcrição completa permanecem fora do repositório.
+

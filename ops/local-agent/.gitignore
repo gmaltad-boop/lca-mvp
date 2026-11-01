@@ -1,0 +1,12 @@
+**/.env*
+!**/.env.example
+state/
+runs/
+agent/runs/
+agent/mission-state.json
+agent/attempt-*.json
+agent/review-feedback.txt
+workspaces/*/input/*.md
+workspaces/*/output/
+**/*.log
+**/__pycache__/

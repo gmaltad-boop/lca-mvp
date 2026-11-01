@@ -4,3 +4,19 @@ data/
 *.tmp
 server.log
 .pid
+
+# Credenciais e estado privado de execucao
+**/.env*
+!**/.env.example
+**/drael.credentials
+**/*private-key*.json
+**/connector-request.json
+ops/local-agent/state/
+ops/local-agent/agent/runs/
+ops/local-agent/agent/mission-state.json
+ops/local-agent/agent/attempt-*.json
+ops/local-agent/agent/review-feedback.txt
+ops/local-agent/workspaces/*/input/*.md
+ops/local-agent/workspaces/*/output/
+**/__pycache__/
+
