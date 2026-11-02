@@ -12,3 +12,4 @@
 - 22:06:11Z S2 inicio: retries skillsmp/pt + start.me
 - 22:06:12Z S2 fim: skillsmp-pt: HTTP 200, 327583 bytes; texto: 224850 chars | amostra:  Catálogo de Agent Skills | Codex e Claude | SkillsMP window.CONFIG = { | startme: HTTP 200, 40706 bytes; texto: 23547 chars | amostra:  (function () { try { var session = JSON.parse(localStorage.getItem('se
 - 23:27 UTC ROTA DE NOTIFICACAO ATIVA: webhook Discord no cofre + /workspace/ping.py (politica: amarelo/vermelho pinga; rotina loga sem ping)
+- 00:24 UTC DECISAO (Guilherme): o agente de computador/navegador passa a ser as MAOS permanentes do Drael (execucao GUI/PC); Drael = cerebro/contratos/veredito. Missao T-003 aberta.
