@@ -1,7 +1,7 @@
 {
   "package": "lca-coordenacao",
   "version": "0.1.0",
-  "zip_sha256": "ac25776f16597a78a1a828048a4ea40d98430917f82dc89acc20ffb2c54557b4",
+  "zip_sha256": "1a1675ae14afe3447602147a1073d42d2a4b035787db19140bc8a4a24fe00456",
   "package_files": [
     {
       "path": ".gitignore",
@@ -17,7 +17,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "49f22f0ee739dbc35c88f1d31bffb90aa36114279530bde8998973ca09b96251"
+      "sha256": "4f3bd1bd6e53e9dc8c93736096daf9e811d796b092f0ed8e6c8ecb48574b8c9a"
     },
     {
       "path": "references/discord.config.example.json",
@@ -25,7 +25,7 @@
     },
     {
       "path": "references/status-2026-11-02.json",
-      "sha256": "40548e3a34efad4c8fb0889931561142dc3e39c3871a6a0d0ac2f5f1e6bff492"
+      "sha256": "2600c0e780db9efee39dfccb869c30b9e06c549d1feb797eff7eaf4f1f9e4426"
     },
     {
       "path": "scripts/init-t002-candidate.py",

@@ -66,7 +66,7 @@ O Drael documenta `drael mcp add` e configuração `.mcp.json`. Não foi instala
 
 1. Conferir o bot existente **Drael-LCA**, aplicação `1566599445238390865`. Convite mínimo preparado: ver canais, enviar mensagens e ler histórico; sem administrador.
 2. O proprietário precisa renovar a credencial do bot exposta no histórico antigo, diretamente no portal Discord. Nenhuma credencial deve ser colada em chat, repositório ou relatório. Esta etapa é manual; os scripts não renovam nem coletam credenciais.
-3. Confirmar servidor, canal dedicado e ID do próprio usuário autorizado. IDs não são segredos. O exemplo contém IDs indicados pelo Drael, ainda sujeitos à conferência de nomes e acesso.
+3. Servidor **Tempestade De Ideias**, canal **#lca-alertas** e ID da conta conectada foram conferidos na interface. O acesso do bot ainda precisa de autorização. A opção **Intenção de conteúdo da mensagem** foi observada desligada no portal: o recebimento por prefixo precisa dessa leitura; ativá-la também requer confirmação do proprietário. Não foi alterada. A opção **Requer concessão de código OAuth2** foi observada ligada e não foi modificada; se o convite exigir fluxo adicional, verificar o contrato oficial antes de mudar a autenticação.
 4. Copiar `references/discord.config.example.json` para uma pasta privada fora do repositório, preencher `authorized_user_ids` e registrar as confirmações somente após realizá-las. O exemplo mantém `enabled=false`, `ids_confirmed=false` e `credential_rotation_confirmed=false`.
 5. Configurar `LCA_DISCORD_BOT_TOKEN` no ambiente privado do processo, fora do chat. Não há token embutido, leitura de cofre Drael ou busca automática por segredos.
 6. Rodar uma vez com `--run --once`, conferir o canal e depois enviar um comando novo. A primeira leitura grava o cursor sem executar o histórico antigo. Sem `--run`, o programa informa que está desligado e não usa rede.
@@ -104,7 +104,7 @@ O recibo é informado pelo coordenador: o código confere sua presença e víncu
 ## Critérios para liberar a próxima etapa
 
 - Testes locais aprovados e revisão do código no GitHub.
-- Credencial renovada e guardada fora do chat; acesso do bot confirmado no canal dedicado.
+- Credencial renovada e guardada fora do chat; acesso do bot e leitura do conteúdo confirmados no canal dedicado.
 - Remetente autorizado recebe resposta a `!lca status`; outro remetente é recusado; replay do mesmo pedido não cria duplicata.
 - Processo contínuo observado e parada comprovada, sem encostar no piloto.
 - Drael/Codex recuperam uma experiência pelo MCP no cliente real, antes de qualquer promessa de integração instalada.

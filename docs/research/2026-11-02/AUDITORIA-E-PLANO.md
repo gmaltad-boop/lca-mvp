@@ -28,6 +28,7 @@ A API `/v1` é stateless. Um cabeçalho de sessão pode registrar turnos/workspa
 - Drael confirmou que não há processo contínuo, daemon ou agenda ativa. Scripts rodavam quando a conversa os acionava. Nenhum heartbeat real foi comprovado.
 - O convite inicial tinha anexos/embeds desnecessários. O mínimo preparado passou de 117760 para 68608, sem administrador.
 - O histórico antigo contém credencial do bot e webhook. Nenhum valor foi copiado para este pacote. A renovação pelo proprietário fora do chat precede a ativação real.
+- Conferência posterior do portal pelo Codex: **Intenção de conteúdo da mensagem desligada** e **Requer concessão de código OAuth2 ligada**. Nenhuma opção foi alterada. A leitura de conteúdo é pendência para o recebimento por prefixo; o fluxo adicional de autorização precisa ser observado, sem desabilitar proteção por inferência.
 
 Scripts legados conferidos no commit `1d0194c6695a`: `ops/poll-discord.py`, `ops/ping.py`, `ops/gitpush.py`. O poller não filtra remetente/bot/webhook, importa conteúdo para log/memória, inicia sem cursor sobre histórico e converte erros em sucesso com explicação não provada. **Não liberar esse código como entrada de comandos.** Drael aceitou os cinco defeitos e adicionou aviso LEGACY no commit `dec65a35b14f`. Esse aviso sozinho não bloqueia execução; o branch desta rodada acrescenta uma interrupção antes de ler credenciais. O novo adaptador tem comandos fixos, allowlist, deduplicação, proposta aguardando revisão e interrupção em acesso negado. Seus testes são locais; rede ainda pendente.
 
