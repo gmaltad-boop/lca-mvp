@@ -1,11 +1,11 @@
 {
   "package": "lca-coordenacao",
   "version": "0.1.0",
-  "zip_sha256": "1a1675ae14afe3447602147a1073d42d2a4b035787db19140bc8a4a24fe00456",
+  "zip_sha256": "311f0c42da6bd0e9a076f457f54877e0947c2b476a589d9e23c826e0e2d9eecb",
   "package_files": [
     {
       "path": ".gitignore",
-      "sha256": "c74e1aab6c258f60ca7a95d01c669450840be2858ab92001a14798efc5684e44"
+      "sha256": "1a655232d15d95bc6e06b4397b64ec2d10f4988fae28dd4bf75eb02cd2b3931f"
     },
     {
       "path": "mcp.json",
@@ -17,7 +17,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "4f3bd1bd6e53e9dc8c93736096daf9e811d796b092f0ed8e6c8ecb48574b8c9a"
+      "sha256": "a4aac158c3b18d45c3437ca068e84369a354ebea199d66860f83ec1932c70476"
     },
     {
       "path": "references/discord.config.example.json",
@@ -56,6 +56,10 @@
       "sha256": "fcd32eb98ccb72c7f6d7fce475dcdc65a2400bd80ee1ccb37cd42b3d91be267d"
     },
     {
+      "path": "server/windows_credential.py",
+      "sha256": "daa9ec52477a86c36c06078d31b105b2018d9d6570dc799a64929353a1060361"
+    },
+    {
       "path": "skills/coordenar-lca/SKILL.md",
       "sha256": "34b7476bc7d039ba73ff48e076b92f65933cff0f10446b655ead89cbe64b7d1d"
     },
@@ -78,6 +82,10 @@
     {
       "path": "tests/test_memory.py",
       "sha256": "c52a43d6eddca1840aaa782cab579359cf01c695da0527649d3a11047ae18d40"
+    },
+    {
+      "path": "tests/test_windows_credential.py",
+      "sha256": "309c535ee38ba59a4248fab288d08d5a9efa8706b85c0953367525f4e57795c1"
     }
   ],
   "secret_scan": "no supported secret literals; private state/raw source excluded",

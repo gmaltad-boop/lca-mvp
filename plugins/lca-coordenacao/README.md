@@ -109,3 +109,13 @@ O recibo é informado pelo coordenador: o código confere sua presença e víncu
 - Processo contínuo observado e parada comprovada, sem encostar no piloto.
 - Drael/Codex recuperam uma experiência pelo MCP no cliente real, antes de qualquer promessa de integração instalada.
 - Nova fonte testa o agente sem resposta preselecionada e sem feedback corretivo durante a primeira entrega.
+
+## Atualização de ativação — 02/11/2026
+
+O Discord confirmou na tela de autorização que Drael-LCA foi adicionado ao servidor Tempestade De Ideias. No portal, Message Content está ativado e a exigência de concessão de código OAuth2 está desativada, conforme aprovação do titular. Isso substitui as pendências dessas opções descritas no retrato anterior.
+
+O recebimento real de comandos permanece desligado: falta o titular renovar e salvar a credencial e validar uma resposta no canal. O novo utilitário `server/windows_credential.py --setup --config CAMINHO_CONFIG --secret-file CAMINHO_DPAPI` abre um campo mascarado local. O titular precisa concluir o preenchimento e salvar. O Windows protege o arquivo para o usuário atual; o comprovante `.saved.json` contém somente horário e caminho de configuração. Não publicar esses arquivos, a configuração privada ou credenciais no GitHub.
+
+Depois das confirmações, `--start --config CAMINHO_CONFIG --secret-file CAMINHO_DPAPI --db CAMINHO_DB --once` permite uma execução limitada. A opção `enabled` continua falsa até a validação autorizada. O utilitário não instala serviço nem inicialização automática. A proteção das mensagens de segunda-feira continua aplicada.
+
+Verificação local atual: 64 testes passaram, incluindo oito testes do armazenamento protegido com dados sintéticos. Isso não comprova entrega real no Discord, operação contínua ou melhoria do modelo.
