@@ -9,7 +9,7 @@ Escopo mínimo intencional: sem vetores, sem extração por LLM, sem memória en
 
 ## 0. Por que existe (falhas que ele impede, provadas em T-002)
 - F1 identidade do produto/modelo ausente na saída (SubidoCast × G4; nome sozinho não prova produto).
-- F2 identidade do modelo executado por autodeclaração (candidato gpt-4.1-mini do 401 vs. modelo real por metadado).
+- F2 identidade do modelo executado por autodeclaração: a tentativa2 do T-002 produziu arquivos com autodeclaração incorreta do modelo; modelo real openai/gpt-5.1 por metadado (evidência pública: docs/evidence/T-002/2026-11-01/{resultado-execucao.md,extracao.json} @ c4751f8). O vínculo 'candidato gpt-4.1-mini do 401' é MEMÓRIA NÃO VERIFICADA do autor Drael (contaminação provável do episódio de leitura Discord 401/403) — revogado como fato, arquivado como memória N=1.
 - F3 tempo de fonte sem minuto verificável.
 - F4 divergência tratada como média em vez de linhas separadas.
 

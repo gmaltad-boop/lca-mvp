@@ -35,3 +35,10 @@ Aposar: comunicar no chat e conferir o histórico para reconciliar com a referê
 | 409 "Git Repository is empty" em git-data | repo novo sem commit algum | primeiro arquivo via `PUT /contents/{path}` |
 | 422 "Reference already exists" ao criar ref | ref já existe | usar `PATCH /git/refs/heads/main` |
 | 405/409 no PATCH de ref | outro escritor chegou antes | reler HEAD e reparentear o commit |
+
+## Fronteira de uso do ops/gitpush.py (auditoria Codex 2026-11-02)
+
+O script reconstrói a ÁRVORE INTEIRA a partir do checkout e calcula exclusões por ausência:
+- Use apenas para commits de checkout completo deste workspace.
+- NÃO use para sincronizar pacote Codex nem checkout parcial: pode apagar arquivos legítimos.
+- Ignora apenas `.env` exato (mais node_modules/ e data/ listados no script); confira antes de confiar.

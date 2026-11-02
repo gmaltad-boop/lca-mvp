@@ -1,3 +1,7 @@
+# LEGACY / CONGELADO (auditoria Codex 2026-11-02, commit 1d0194c): NAO ATIVAR.
+# Defeitos aceitos: aceita qualquer autor/bot/webhook; trata mensagem como memoria; re-le historico
+# sem cursor na 1a rodada; converte qualquer falha em rc=0 supondo 'bot fora'; sem janela do piloto.
+# Substituicao prevista: adaptador allowlist do pacote Codex (desligado por padrao).
 #!/usr/bin/env python3
 """poll-discord.py - OUVIDO do Drael: le linhas novas de Guilherme no canal LCA.
 Requer no cofre: DISCORD_BOT_TOKEN e DISCORD_CHANNEL_ID (ainda nao presentes).
