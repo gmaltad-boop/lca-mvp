@@ -7,6 +7,7 @@
 Requer no cofre: DISCORD_BOT_TOKEN e DISCORD_CHANNEL_ID (ainda nao presentes).
 Uso: python3 poll-discord.py   -> imprime mensagens novas (depois do cursor) e atualiza o cursor.
 Cada linha nova vira entrada no protocolo (autor=Guilherme), pronta para o proximo ciclo."""
+raise SystemExit('LEGACY_DESATIVADO: usar o adaptador revisado lca-coordenacao/server/discord_bridge.py; nenhum segredo foi lido.')
 import json, os, sys, urllib.request
 cred = dict(l.strip().split("=", 1) for l in open("/workspace/drael.credentials") if "=" in l)
 tok, ch = cred.get("DISCORD_BOT_TOKEN"), cred.get("DISCORD_CHANNEL_ID")
@@ -32,3 +33,4 @@ if novas:
     with open(log, "a") as f:
         f.write("- " + novas[-1]["timestamp"][:16] + " ENTRADA-DO-APP (Discord): " + (novas[-1].get("content") or "")[:300] + "\n")
 print("n=" + str(len(novas)))
+

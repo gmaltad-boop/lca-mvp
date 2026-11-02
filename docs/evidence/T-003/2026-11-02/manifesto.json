@@ -1,0 +1,86 @@
+{
+  "package": "lca-coordenacao",
+  "version": "0.1.0",
+  "zip_sha256": "ac25776f16597a78a1a828048a4ea40d98430917f82dc89acc20ffb2c54557b4",
+  "package_files": [
+    {
+      "path": ".gitignore",
+      "sha256": "c74e1aab6c258f60ca7a95d01c669450840be2858ab92001a14798efc5684e44"
+    },
+    {
+      "path": "mcp.json",
+      "sha256": "85d5cc6e2402f3f4394b999ce0c0f50a0bff8d41f13ca2564c300d16953c52a9"
+    },
+    {
+      "path": "plugin.json",
+      "sha256": "dade7915e4f48f58cf7b292f49caa090eeb1418edee95952e9359e7bd9ab105c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "49f22f0ee739dbc35c88f1d31bffb90aa36114279530bde8998973ca09b96251"
+    },
+    {
+      "path": "references/discord.config.example.json",
+      "sha256": "b0a3cdc323bd9f104dc9bf085bec641ed6de658ca5fd2d9b76d1fb42db468fa2"
+    },
+    {
+      "path": "references/status-2026-11-02.json",
+      "sha256": "40548e3a34efad4c8fb0889931561142dc3e39c3871a6a0d0ac2f5f1e6bff492"
+    },
+    {
+      "path": "scripts/init-t002-candidate.py",
+      "sha256": "c12995acb717c78977673bc38b714cb787d402f1fd88a163f5771181df861b68"
+    },
+    {
+      "path": "scripts/test-lca.mjs",
+      "sha256": "68c76a7e5b352a6096d989868198d45de2f96f64697230270ad1d8babebf5104"
+    },
+    {
+      "path": "server/discord_bridge.py",
+      "sha256": "24478f85f4f2193ba56b3e3355ab4375ea3954530b20399a2d96de9ad59078a4"
+    },
+    {
+      "path": "server/launch-mcp.mjs",
+      "sha256": "ceb4f0537810523009e5f6b9280c4e538fefd75cb8c93fd57bead724e1ab19a0"
+    },
+    {
+      "path": "server/mcp_server.py",
+      "sha256": "84124e828daeed03471150276c11b7194ea95a58a55a748201380976f4c61844"
+    },
+    {
+      "path": "server/memory.py",
+      "sha256": "fbade774f5050c17d10a76365ea467bdde18728a730dd6ffdcf6e55767ac5d38"
+    },
+    {
+      "path": "server/python-runtime.mjs",
+      "sha256": "fcd32eb98ccb72c7f6d7fce475dcdc65a2400bd80ee1ccb37cd42b3d91be267d"
+    },
+    {
+      "path": "skills/coordenar-lca/SKILL.md",
+      "sha256": "34b7476bc7d039ba73ff48e076b92f65933cff0f10446b655ead89cbe64b7d1d"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "9f5392a5ca71eacda7e7a852682b22d18adbc15a9a216db42e7082ce2be58170"
+    },
+    {
+      "path": "tests/test_discord.py",
+      "sha256": "7f459a4c63429f64121aca1401aeb1367672f00263b7256f4400cd0790065a46"
+    },
+    {
+      "path": "tests/test_integration.py",
+      "sha256": "3c7daf5d62f4e8acfe46917d99e11ab9bc5dab03f6b97697dfa40e16a76c66b5"
+    },
+    {
+      "path": "tests/test_mcp.py",
+      "sha256": "5d3c5fe2f2e43fd9251a2a6e2361124e1148aa5c45690e1e027624076b6ca8ac"
+    },
+    {
+      "path": "tests/test_memory.py",
+      "sha256": "c52a43d6eddca1840aaa782cab579359cf01c695da0527649d3a11047ae18d40"
+    }
+  ],
+  "secret_scan": "no supported secret literals; private state/raw source excluded",
+  "installed_in_host": false,
+  "discord_enabled": false
+}

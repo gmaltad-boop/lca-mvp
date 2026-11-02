@@ -1,0 +1,16 @@
+{
+  "verified_at": "2026-11-02T01:10:00-03:00",
+  "state_kind": "retrato_documental; não é monitoramento ao vivo",
+  "project": "LCA",
+  "official_task_ref": "https://github.com/gmaltad-boop/lca-mvp/blob/main/docs/missions/T-003-missao-3-discord-bot-TASK.md",
+  "t002": "POC supervisionada encerrada: 6 análises distintas após feedback, mesma fonte e 8 blocos selecionados; generalização ainda não testada",
+  "discord": "Canal #lca-alertas / Tempestade De Ideias e perfil do remetente conferidos pela interface; configuração privada desativada. Acesso do bot, rotação de credencial e execução contínua ainda pendentes",
+  "pilot": "Segunda-feira às 9h preservada; este pacote não tem integração com essas mensagens",
+  "pending": [
+    "Proprietário renovar a credencial do bot exposta em histórico e configurá-la fora do chat",
+    "Concluir concessão de acesso do bot após confirmação no navegador",
+    "Testar ida e volta real no canal, com pedido inofensivo identificado",
+    "Conectar MCP no cliente escolhido e verificar descoberta das ferramentas",
+    "Qualificar agente em uma fonte nova sem feedback corretivo durante a primeira entrega"
+  ]
+}
