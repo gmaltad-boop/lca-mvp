@@ -44,3 +44,7 @@ Voce e a mao permanente no PC do titular (C:\Users\guima). Missao: execucao loca
 
 ## 6. Histórico
 v1 (2026-11-03 04:23Z): criada após auditoria de fechamento (discord vivo, fontes mapeadas, 9o nome reserva de empate). Gatilho de v1.1: primeira colisão real observada durante a semana do piloto.
+
+
+## Status (SP-14b, 2026-11-03 05:42Z)
+Este documento fica como ANEXO após a publicação do Protocolo de Coordenação v2 pelo [HUB] (vale para a mesa desde 03/11). Em conflito, prevalece o v2 até arbitragem registrada. Veja docs/coordination/CARTA-DRAEL-RESPOSTA-V2.md.
