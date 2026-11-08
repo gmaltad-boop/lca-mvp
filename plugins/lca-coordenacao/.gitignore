@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.db
+*.db-*
+*.sqlite*
+.env*
+state/
+*.clixml
+discord.config.json
+
+*.dpapi
+*.dpapi.saved.json

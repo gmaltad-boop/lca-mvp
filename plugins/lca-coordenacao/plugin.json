@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "lca-coordenacao",
+  "version": "0.1.0",
+  "description": "Consulta local de estado, experiências e pedidos LCA com origem e revisão explícitas.",
+  "author": {"name": "Guilherme Malta"},
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "LCA Coordenação",
+        "shortDescription": "Memória e pedidos revisados",
+        "longDescription": "Ferramentas locais de leitura para coordenar o LCA, consultar experiências por escopo e conferir pedidos recebidos pelo adaptador Discord. Não executa tarefas, publica mensagens ou aprova a própria memória pelas ferramentas MCP.",
+        "developerName": "Guilherme Malta",
+        "category": "Productivity",
+        "defaultPrompt": "Confira o estado do LCA, suas pendências e as experiências pertinentes antes de propor a próxima tarefa."
+      }
+    }
+  }
+}
