@@ -1,0 +1,29 @@
+**[FALHAS-NAO-COBERTAS]**
+O protocolo mitiga F1-F4, mas permanece vulnerável a **F2** se o ambiente de execução (wrapper) não injetar o metadado via sistema; o agente não pode validar sua própria identidade se o dado não estiver no contexto de entrada. **F4** é coberta em V1, mas a Seção 1 (Hierarquia) permite que a "Camada L4" vença divergências técnicas, o que pode reintroduzir o erro se a camada superior estiver desatualizada.
+
+**[REGRAS-FRAGEIS]**
+
+**Seção 1 (Hierarquia):**
+1. **Dado sem fonte:** A existência e integridade da "camada L4 (Notion)" como verdade absoluta.
+2. **O que desmentiria:** Um erro de sincronização onde o Repo (execução) está correto e o Notion (estratégia) obsoleto.
+3. **Versão reversível:** "Colisão: Bloqueio imediato e sinalização de divergência; nenhuma camada vence sem revisão humana."
+
+**Seção 2 (Save Point):**
+1. **Dado sem fonte:** Disponibilidade de API para verificação de SHA em tempo real pelo agente.
+2. **O que desmentiria:** Latência de propagação do Git ou falta de permissão de token de API.
+3. **Versão reversível:** "Save point: `git rev-parse HEAD` local registrado no log de saída."
+
+**Seção 4 (R6 - Segundo Leitor):**
+1. **Dado sem fonte:** Disponibilidade de um segundo agente de família diferente ou script de validação ativo.
+2. **O que desmentiria:** Ambos os agentes (ex: Gemini e GPT) compartilharem o mesmo viés de alucinação sobre o mesmo prompt.
+3. **Versão reversível:** "R6: Validação obrigatória por script de schema (JSON/Regex) antes do commit."
+
+**[MUDANCAS-MINIMAS]**
+1. **Schema (Seção 3):** Adicionar campo `evidencia_identidade` (ex: hash do binário ou header de API) para sustentar R1.
+2. **R6 (Seção 4):** Definir "verificação mecânica" como um script de validação de schema (ex: `check_schema.py`) executado via CLI antes de cada `append`.
+3. **V6 (Seção 5):** Alterar para: "O executor nada escreve no Notion; a sincronização Repo -> Notion é tarefa exclusiva de um script de integração ou humano."
+
+**[OK]**
+1. **R4 (Append-only):** Garante auditabilidade total e impede reescrita de histórico (essencial para F3/F4).
+2. **V1 (Divergência):** Força a visibilidade do conflito em vez de buscar um consenso artificial.
+3. **Seção 6 (Operações):** Conjunto fechado impede "criatividade" procedimental que gera entropia na memória.

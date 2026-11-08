@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "ids_confirmed": false,
+  "credential_rotation_confirmed": false,
+  "guild_id": "759916034731278358",
+  "channel_id": "1566593781430616247",
+  "authorized_user_ids": [],
+  "poll_seconds": 15
+}

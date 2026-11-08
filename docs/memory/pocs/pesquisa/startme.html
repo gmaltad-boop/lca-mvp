@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html class="" id="startme" lang="en">
+<head>
+<script>
+  (function () {
+    try {
+      var session = JSON.parse(localStorage.getItem('session') || 'null');
+      var followsSystem = session &&
+        session.user &&
+        session.user.theme_preference === 'system';
+      var systemIsDark = followsSystem &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var userSelectedDark = session && session.user && session.user.dark;
+      if (systemIsDark || (!followsSystem && userSelectedDark)) {
+        document.documentElement.style.backgroundColor = '#121212';
+      }
+    } catch (e) {}
+  })();
+</script>
+<!-- InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.3) -->
+<script type="text/javascript" async=true>
+(function() {
+var host = 'start.me';
+var element = document.createElement('script');
+var firstScript = document.getElementsByTagName('script')[0];
+var url = 'https://cmp.inmobi.com'
+.concat('/choice/', 'gJZb4UC4c6mqx', '/', host, '/choice.js?tag_version=V3');
+var uspTries = 0;
+var uspTriesLimit = 3;
+element.async = true;
+element.type = 'text/javascript';
+element.src = url;
+
+firstScript.parentNode.insertBefore(element, firstScript);
+
+function makeStub() {
+var TCF_LOCATOR_NAME = '__tcfapiLocator';
+var queue = [];
+var win = window;
+var cmpFrame;
+
+function addFrame() {
+var doc = win.document;
+var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+if (!otherCMP) {
+if (doc.body) {
+var iframe = doc.createElement('iframe');
+
+iframe.style.cssText = 'display:none';
+iframe.name = TCF_LOCATOR_NAME;
+doc.body.appendChild(iframe);
+} else {
+setTimeout(addFrame, 5);
+}
+}
+return !otherCMP;
+}
+
+function tcfAPIHandler() {
+var gdprApplies;
+var args = arguments;
+
+if (!args.length) {
+return queue;
+} else if (args[0] === 'setGdprApplies') {
+if (
+args.length > 3 &&
+args[2] === 2 &&
+typeof args[3] === 'boolean'
+) {
+gdprApplies = args[3];
+if (typeof args[2] === 'function') {
+args[2]('set', true);
+}
+}
+} else if (args[0] === 'ping') {
+var retr = {
+gdprApplies: gdprApplies,
+cmpLoaded: false,
+cmpStatus: 'stub'
+};
+
+if (typeof args[2] === 'function') {
+args[2](retr);
+}
+} else {
+if(args[0] === 'init' && typeof args[3] === 'object') {
+args[3] = Object.assign(args[3], { tag_version: 'V3' });
+}
+queue.push(args);
+}
+}
+
+function postMessageEventHandler(event) {
+var msgIsString = typeof event.data === 'string';
+var json = {};
+
+try {
+if (msgIsString) {
+json = JSON.parse(event.data);
+} else {
+json = event.data;
+}
+} catch (ignore) {}
+
+var payload = json.__tcfapiCall;
+
+if (payload) {
+window.__tcfapi(
+payload.command,
+payload.version,
+function(retValue, success) {
+var returnMsg = {
+  __tcfapiReturn: {
+    returnValue: retValue,
+    success: success,
+    callId: payload.callId
+  }
+};
+if (msgIsString) {
+  returnMsg = JSON.stringify(returnMsg);
+}
+if (event && event.source && event.source.postMessage) {
+  event.source.postMessage(returnMsg, '*');
+}
+},
+payload.parameter
+);
+}
+}
+
+while (win) {
+try {
+if (win.frames[TCF_LOCATOR_NAME]) {
+cmpFrame = win;
+break;
+}
+} catch (ignore) {}
+
+if (win === window.top) {
+break;
+}
+win = win.parent;
+}
+if (!cmpFrame) {
+addFrame();
+win.__tcfapi = tcfAPIHandler;
+win.addEventListener('message', postMessageEventHandler, false);
+}
+};
+
+makeStub();
+
+function makeGppStub() {
+const CMP_ID = 10;
+const SUPPORTED_APIS = [
+'2:tcfeuv2',
+'6:uspv1',
+'7:usnatv1',
+'8:usca',
+'9:usvav1',
+'10:uscov1',
+'11:usutv1',
+'12:usctv1'
+];
+
+window.__gpp_addFrame = function (n) {
+if (!window.frames[n]) {
+if (document.body) {
+var i = document.createElement("iframe");
+i.style.cssText = "display:none";
+i.name = n;
+document.body.appendChild(i);
+} else {
+window.setTimeout(window.__gpp_addFrame, 10, n);
+}
+}
+};
+window.__gpp_stub = function () {
+var b = arguments;
+__gpp.queue = __gpp.queue || [];
+__gpp.events = __gpp.events || [];
+
+if (!b.length || (b.length == 1 && b[0] == "queue")) {
+return __gpp.queue;
+}
+
+if (b.length == 1 && b[0] == "events") {
+return __gpp.events;
+}
+
+var cmd = b[0];
+var clb = b.length > 1 ? b[1] : null;
+var par = b.length > 2 ? b[2] : null;
+if (cmd === "ping") {
+clb(
+{
+gppVersion: "1.1",
+cmpStatus: "stub",
+cmpDisplayStatus: "hidden",
+signalStatus: "not ready",
+supportedAPIs: SUPPORTED_APIS,
+cmpId: CMP_ID,
+sectionList: [],
+applicableSections: [-1],
+gppString: "",
+parsedSections: {},
+},
+true
+);
+} else if (cmd === "addEventListener") {
+if (!("lastId" in __gpp)) {
+__gpp.lastId = 0;
+}
+__gpp.lastId++;
+var lnr = __gpp.lastId;
+__gpp.events.push({
+id: lnr,
+callback: clb,
+parameter: par,
+});
+clb(
+{
+eventName: "listenerRegistered",
+listenerId: lnr,
+data: true,
+pingData: {
+  gppVersion: "1.1",
+  cmpStatus: "stub",
+  cmpDisplayStatus: "hidden",
+  signalStatus: "not ready",
+  supportedAPIs: SUPPORTED_APIS,
+  cmpId: CMP_ID,
+  sectionList: [],
+  applicableSections: [-1],
+  gppString: "",
+  parsedSections: {},
+},
+},
+true
+);
+} else if (cmd === "removeEventListener") {
+var success = false;
+for (var i = 0; i < __gpp.events.length; i++) {
+if (__gpp.events[i].id == par) {
+__gpp.events.splice(i, 1);
+success = true;
+break;
+}
+}
+clb(
+{
+eventName: "listenerRemoved",
+listenerId: par,
+data: success,
+pingData: {
+  gppVersion: "1.1",
+  cmpStatus: "stub",
+  cmpDisplayStatus: "hidden",
+  signalStatus: "not ready",
+  supportedAPIs: SUPPORTED_APIS,
+  cmpId: CMP_ID,
+  sectionList: [],
+  applicableSections: [-1],
+  gppString: "",
+  parsedSections: {},
+},
+},
+true
+);
+} else if (cmd === "hasSection") {
+clb(false, true);
+} else if (cmd === "getSection" || cmd === "getField") {
+clb(null, true);
+} else {
+__gpp.queue.push([].slice.apply(b));
+}
+};
+window.__gpp_msghandler = function (event) {
+var msgIsString = typeof event.data === "string";
+try {
+var json = msgIsString ? JSON.parse(event.data) : event.data;
+} catch (e) {
+var json = null;
+}
+if (typeof json === "object" && json !== null && "__gppCall" in json) {
+var i = json.__gppCall;
+window.__gpp(
+i.command,
+function (retValue, success) {
+var returnMsg = {
+  __gppReturn: {
+    returnValue: retValue,
+    success: success,
+    callId: i.callId,
+  },
+};
+event.source.postMessage(msgIsString ? JSON.stringify(returnMsg) : returnMsg, "*");
+},
+"parameter" in i ? i.parameter : null,
+"version" in i ? i.version : "1.1"
+);
+}
+};
+if (!("__gpp" in window) || typeof window.__gpp !== "function") {
+window.__gpp = window.__gpp_stub;
+window.addEventListener("message", window.__gpp_msghandler, false);
+window.__gpp_addFrame("__gppLocator");
+}
+};
+
+makeGppStub();
+
+var uspStubFunction = function() {
+var arg = arguments;
+if (typeof window.__uspapi !== uspStubFunction) {
+setTimeout(function() {
+if (typeof window.__uspapi !== 'undefined') {
+window.__uspapi.apply(window.__uspapi, arg);
+}
+}, 500);
+}
+};
+
+var checkIfUspIsReady = function() {
+uspTries++;
+if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+console.warn('USP is not accessible');
+} else {
+clearInterval(uspInterval);
+}
+};
+
+if (typeof window.__uspapi === 'undefined') {
+window.__uspapi = uspStubFunction;
+var uspInterval = setInterval(checkIfUspIsReady, 6000);
+}
+})();
+</script>
+<!-- End InMobi Choice. Consent Manager Tag v3.0 (for TCF 2.2) -->
+
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link crossorigin="true" href="https://c.start.me" rel="preconnect">
+<link crossorigin="true" href="https://static.start.me" rel="preconnect">
+<link crossorigin="true" href="https://f.start.me" rel="preconnect">
+<link crossorigin="true" href="https://api.start.me" rel="preconnect">
+<meta content="9cc4209b1115b19" name="cf-2fa-verify">
+<title>Cópia de AWESOME_START.ME_PAGE - Start.me</title>
+<meta content="A startpage with online resources about Cópia de AWESOME_START.ME_PAGE, created by Guilherme Malta." name="description">
+<meta content="https://static.start.me/c_scale,q_auto/backgrounds/vde2rsmb9euyzxsorphu" name="thumbnail">
+<meta content="Guilherme Malta (Start.me)" name="author">
+<link href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page" rel="canonical">
+<script>
+  const canonicalUrl = new URL("https://start.me/p/jvwdkz/copia-de-awesome_start-me_page");
+  if (location.search) {
+    const params = new URLSearchParams(location.search);
+    params.delete('locale');
+    canonicalUrl.search = params.toString();
+  }
+  if (location.hash) canonicalUrl.hash = location.hash;
+  if (location.hostname === canonicalUrl.hostname && location.href != canonicalUrl.href) try {
+    window.history.replaceState({}, null, canonicalUrl.href);
+  } catch {
+    location.href = canonicalUrl.href;
+  }
+</script>
+
+<meta content="no-referrer" name="referrer">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=en" hreflang="en" rel="alternate">
+<link data-locale="Nederlands" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=nl" hreflang="nl" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=ar" hreflang="ar" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=cs" hreflang="cs" rel="alternate">
+<link data-locale="Español" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=es" hreflang="es" rel="alternate">
+<link data-locale="Español (Argentina)" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=es-AR" hreflang="es-AR" rel="alternate">
+<link data-locale="Deutsch" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=de" hreflang="de" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=da" hreflang="da" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=id" hreflang="id" rel="alternate">
+<link data-locale="Italiano" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=it" hreflang="it" rel="alternate">
+<link data-locale="日本語" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=ja" hreflang="ja" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=fi" hreflang="fi" rel="alternate">
+<link data-locale="Français" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=fr" hreflang="fr" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=el" hreflang="el" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=he" hreflang="he" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=hi" hreflang="hi" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=hu" hreflang="hu" rel="alternate">
+<link data-locale="한국어" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=ko" hreflang="ko" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=ms" hreflang="ms" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=no" hreflang="no" rel="alternate">
+<link data-locale="Polski" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=pl" hreflang="pl" rel="alternate">
+<link data-locale="Português" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=pt" hreflang="pt" rel="alternate">
+<link data-locale="Português (Brasil)" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=pt-BR" hreflang="pt-BR" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=ro" hreflang="ro" rel="alternate">
+<link data-locale="Русский" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=ru" hreflang="ru" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=sr" hreflang="sr" rel="alternate">
+<link data-locale="Svenska" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=sv" hreflang="sv" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=zh-TW" hreflang="zh-TW" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=th" hreflang="th" rel="alternate">
+<link data-locale="Türkçe" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=tr" hreflang="tr" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=vi" hreflang="vi" rel="alternate">
+<link data-locale="English" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=zh" hreflang="zh" rel="alternate">
+<link data-locale="中文" href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page?locale=zh-CN" hreflang="zh-CN" rel="alternate">
+<link href="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page" hreflang="x-default" rel="alternate">
+
+<meta content="IE=EDGE" http-equiv="X-UA-Compatible">
+
+<meta content="all" name="robots">
+
+<meta content="Cópia de AWESOME_START.ME_PAGE - Start.me" data-vmid="og:title" data-vue-meta="true" property="og:title">
+<meta content="https://start.me/p/jvwdkz/copia-de-awesome_start-me_page" property="og:url">
+<meta content="A startpage with online resources about Cópia de AWESOME_START.ME_PAGE, created by Guilherme Malta." data-vmid="og:description" data-vue-meta="true" property="og:description">
+<meta content="https://screenshots.start.me/p/jvwdkz" property="og:image">
+<meta content="website" property="og:type">
+<meta content="Start.me" property="og:site_name">
+<meta content="256485647863321" property="fb:app_id">
+<meta content="400842316708555" property="fb:pages">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="@startme" name="twitter:site">
+<meta content="Cópia de AWESOME_START.ME_PAGE - Start.me" name="twitter:title">
+<meta content="A startpage with online resources about Cópia de AWESOME_START.ME_PAGE, created by Guilherme Malta." name="twitter:description">
+<meta content="https://screenshots.start.me/p/jvwdkz" name="twitter:image">
+<link href="/images/favicons/favicon-32.png" id="favicon_32" rel="icon" sizes="32x32">
+<link href="/images/favicons/favicon-180.png" id="favicon_180" rel="icon" sizes="180x180">
+<link href="/images/favicons/favicon-192.png" id="favicon_192" rel="icon" sizes="192x192">
+
+<link href="/images/favicons/favicon-180.png" rel="apple-touch-icon" sizes="180x180">
+<link href="/images/favicons/favicon-192.png" rel="apple-touch-icon" sizes="192x192">
+<!--[if IE]>
+<link href="/favicon.ico" rel="shortcut icon">
+<![endif]-->
+<meta content="#6392ff" name="msapplication-TileColor">
+<meta content="/images/favicons/favicon-150.png" name="msapplication-TileImage">
+<meta content="Start.me" name="application-name">
+<meta content="yes" name="mobile-web-app-capable">
+<meta content="no" name="apple-mobile-web-app-capable">
+<link href="/en/webmanifest.webmanifest" rel="manifest">
+<meta content="#0093d5" name="theme-color">
+<link href="https://chrome.google.com/webstore/detail/new-tab-page-by-startme/cfmnkhhioonhiehehedmnjibmampjiab" rel="chrome-webstore-item">
+<meta content="obieelmbnhmflidokdjooeeibeaiialm" property="aoc:app_id">
+<link href="/opensearch.xml" rel="search" title="start.me" type="application/opensearchdescription+xml">
+
+<script>
+  (function () {
+    var debugRecoveryParam = 'debug_loader'
+  
+    var bootState = {
+      recoveryShown: false,
+      recoveryNavigationStarted: false,
+      failures: [],
+      diagnostics: {}
+    }
+  
+    var asyncDiagnosticsPromise = null
+  
+    window.__startmeBuild = {
+      id: "v5645",
+      script: "https://c.start.me/assets/application-BMyMcDCf.js"
+    }
+  
+    function hasAppMounted () {
+      return !!document.getElementById('appID')
+    }
+  
+    function getAppContainer () {
+      return document.getElementById('app')
+    }
+  
+    function recordFailure (url, source, detail) {
+      bootState.failures.push({
+        url: url || null,
+        source: source || 'unknown',
+        detail: detail || null,
+        time: new Date().toISOString()
+      })
+    }
+  
+    function getRecoveryUrl () {
+      var currentUrl = window.location.href
+  
+      try {
+        var url = new URL(window.location.href)
+        url.searchParams.delete(debugRecoveryParam)
+        currentUrl = url.toString()
+      } catch (error) {
+        console.error('Failed to build Start.me recovery return URL', error)
+      }
+  
+      return '/app-recovery/reset-site-data?return_to=' + encodeURIComponent(currentUrl)
+    }
+  
+    function navigateToRecovery () {
+      if (bootState.recoveryNavigationStarted) return
+  
+      bootState.recoveryNavigationStarted = true
+      window.location.replace(getRecoveryUrl())
+    }
+  
+    function getAssetRefreshUrls () {
+      var urls = {}
+      if (window.__startmeBuild && window.__startmeBuild.script) urls[window.__startmeBuild.script] = true
+  
+      bootState.failures.forEach(function (failure) {
+        if (failure && failure.url && failure.url.indexOf('/assets/') >= 0) {
+          urls[failure.url] = true
+        }
+      })
+  
+      return Object.keys(urls)
+    }
+  
+    function refreshAssetCache () {
+      if (!window.fetch) return Promise.resolve()
+  
+      return Promise.all(getAssetRefreshUrls().map(function (assetUrl) {
+        return fetch(assetUrl, {
+          cache: 'reload',
+          credentials: 'omit',
+          mode: 'cors'
+        }).catch(function (error) {
+          console.error('Failed to refresh cached Start.me asset', assetUrl, error)
+        })
+      }))
+    }
+  
+    function resetBrowserCaches () {
+      var cleanupTasks = []
+  
+      try {
+        cleanupTasks.push(refreshAssetCache())
+      } catch (error) {
+        console.error('Failed to refresh cached Start.me assets', error)
+      }
+  
+      try {
+        if ('caches' in window) {
+          cleanupTasks.push(
+            caches.keys().then(function (cacheNames) {
+              return Promise.all(cacheNames.map(function (cacheName) {
+                return caches.delete(cacheName)
+              }))
+            })
+          )
+        }
+      } catch (error) {
+        console.error('Failed to clear service worker caches', error)
+      }
+  
+      try {
+        if ('serviceWorker' in navigator) {
+          cleanupTasks.push(
+            navigator.serviceWorker.getRegistrations().then(function (registrations) {
+              return Promise.all(registrations.map(function (registration) {
+                return registration.unregister()
+              }))
+            })
+          )
+        }
+      } catch (error) {
+        console.error('Failed to unregister service worker', error)
+      }
+  
+      return Promise.all(cleanupTasks)
+    }
+  
+    function loadLatestStartMe () {
+      // iOS Safari can leave cache/service-worker promises unresolved; never block navigation on cleanup.
+      window.setTimeout(navigateToRecovery, 1000)
+  
+      resetBrowserCaches()
+        .catch(function (error) {
+          console.error('Failed to reset cached Start.me version', error)
+        })
+        .then(navigateToRecovery)
+    }
+  
+    function clearLocalBrowserStorage () {
+      try {
+        if (window.localStorage) window.localStorage.clear()
+      } catch (error) {
+        console.error('Failed to clear localStorage', error)
+      }
+  
+      try {
+        if (window.sessionStorage) window.sessionStorage.clear()
+      } catch (error) {
+        console.error('Failed to clear sessionStorage', error)
+      }
+    }
+  
+    function getCsrfToken () {
+      var token = document.querySelector('meta[name="csrf-token"]')
+      return token && token.getAttribute('content')
+    }
+  
+    function signOutCurrentSession () {
+      if (!window.fetch) return Promise.resolve()
+  
+      var formData = new FormData()
+      formData.append('_method', 'delete')
+  
+      var csrfToken = getCsrfToken()
+      if (csrfToken) formData.append('authenticity_token', csrfToken)
+  
+      return fetch('/users/sign_out.json', {
+        method: 'POST',
+        credentials: 'same-origin',
+        headers: csrfToken ? { 'X-CSRF-Token': csrfToken } : {},
+        body: formData
+      })
+    }
+  
+    function navigateToSignIn () {
+      window.location.replace('/users/sign_in?startme_reload=' + Date.now())
+    }
+  
+    function resetAndSignOut () {
+      var confirmed = window.confirm(
+        'This will clear Start.me data stored in this browser and sign you out. Use this only if loading the latest version did not help.'
+      )
+      if (!confirmed) return
+  
+      // Keep navigation bounded even if Safari leaves cleanup promises unresolved.
+      window.setTimeout(navigateToSignIn, 1500)
+  
+      resetBrowserCaches()
+        .catch(function (error) {
+          console.error('Failed to reset cached Start.me version before sign out', error)
+        })
+        .then(function () {
+          clearLocalBrowserStorage()
+          return signOutCurrentSession()
+        })
+        .catch(function (error) {
+          console.error('Failed to sign out during Start.me recovery', error)
+        })
+        .then(navigateToSignIn)
+    }
+  
+    function getUrlHost (url) {
+      try {
+        return new URL(url, window.location.href).host
+      } catch (error) {
+        return null
+      }
+    }
+  
+    function getStorageInfo () {
+      var info = {}
+  
+      try {
+        info.localStorageLength = window.localStorage ? window.localStorage.length : null
+      } catch (error) {
+        info.localStorageError = error.name || String(error)
+      }
+  
+      try {
+        info.sessionStorageLength = window.sessionStorage ? window.sessionStorage.length : null
+      } catch (error) {
+        info.sessionStorageError = error.name || String(error)
+      }
+  
+      return info
+    }
+  
+    function getConnectionInfo () {
+      var connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+      if (!connection) return null
+  
+      return {
+        effectiveType: connection.effectiveType || null,
+        downlink: connection.downlink || null,
+        rtt: connection.rtt || null,
+        saveData: connection.saveData || false
+      }
+    }
+  
+    function getServiceWorkerState (worker) {
+      if (!worker) return null
+  
+      return {
+        scriptURL: worker.scriptURL || null,
+        state: worker.state || null
+      }
+    }
+  
+    function getBaseDiagnostics () {
+      return {
+        browser: {
+          online: navigator.onLine,
+          language: navigator.language,
+          languages: navigator.languages || [],
+          platform: navigator.platform,
+          cookieEnabled: navigator.cookieEnabled,
+          vendor: navigator.vendor || null
+        },
+        document: {
+          visibilityState: document.visibilityState,
+          referrer: document.referrer || null
+        },
+        screen: window.screen
+          ? {
+              width: window.screen.width,
+              height: window.screen.height,
+              devicePixelRatio: window.devicePixelRatio || 1
+            }
+          : null,
+        timezone: (typeof Intl !== 'undefined' && Intl.DateTimeFormat)
+          ? Intl.DateTimeFormat().resolvedOptions().timeZone
+          : null,
+        connection: getConnectionInfo(),
+        storage: getStorageInfo(),
+        assetHosts: {
+          appScript: getUrlHost(window.__startmeBuild && window.__startmeBuild.script),
+          failures: bootState.failures.map(function (failure) {
+            return getUrlHost(failure && failure.url)
+          }).filter(Boolean)
+        }
+      }
+    }
+  
+    function collectAsyncDiagnostics () {
+      if (asyncDiagnosticsPromise) return asyncDiagnosticsPromise
+  
+      bootState.diagnostics = getBaseDiagnostics()
+      var tasks = []
+  
+      try {
+        if (navigator.storage && navigator.storage.estimate) {
+          tasks.push(
+            navigator.storage.estimate().then(function (estimate) {
+              bootState.diagnostics.storageEstimate = {
+                quota: estimate.quota || null,
+                usage: estimate.usage || null
+              }
+            }).catch(function (error) {
+              bootState.diagnostics.storageEstimateError = error.name || String(error)
+            })
+          )
+        }
+      } catch (error) {
+        bootState.diagnostics.storageEstimateError = error.name || String(error)
+      }
+  
+      try {
+        if ('caches' in window) {
+          tasks.push(
+            caches.keys().then(function (cacheNames) {
+              bootState.diagnostics.cacheNames = cacheNames
+            }).catch(function (error) {
+              bootState.diagnostics.cacheNamesError = error.name || String(error)
+            })
+          )
+        }
+      } catch (error) {
+        bootState.diagnostics.cacheNamesError = error.name || String(error)
+      }
+  
+      try {
+        if ('serviceWorker' in navigator) {
+          bootState.diagnostics.serviceWorker = {
+            controller: getServiceWorkerState(navigator.serviceWorker.controller),
+            registrations: []
+          }
+  
+          tasks.push(
+            navigator.serviceWorker.getRegistrations().then(function (registrations) {
+              bootState.diagnostics.serviceWorker.registrations = registrations.map(function (registration) {
+                return {
+                  scope: registration.scope,
+                  active: getServiceWorkerState(registration.active),
+                  installing: getServiceWorkerState(registration.installing),
+                  waiting: getServiceWorkerState(registration.waiting)
+                }
+              })
+            }).catch(function (error) {
+              bootState.diagnostics.serviceWorkerError = error.name || String(error)
+            })
+          )
+        }
+      } catch (error) {
+        bootState.diagnostics.serviceWorkerError = error.name || String(error)
+      }
+  
+      asyncDiagnosticsPromise = Promise.all(tasks).then(function () {
+        return getDebugInfo()
+      })
+  
+      return asyncDiagnosticsPromise
+    }
+  
+    function getDebugInfo () {
+      if (!bootState.diagnostics || Object.keys(bootState.diagnostics).length === 0) {
+        bootState.diagnostics = getBaseDiagnostics()
+      }
+  
+      return JSON.stringify({
+        build: window.__startmeBuild,
+        pageUrl: window.location.href,
+        userAgent: navigator.userAgent,
+        failures: bootState.failures,
+        diagnostics: bootState.diagnostics,
+        time: new Date().toISOString()
+      }, null, 2)
+    }
+  
+    function buildSupportMailto () {
+      var subject = encodeURIComponent('Start.me load problem')
+      var body = encodeURIComponent(
+        'Hi Start.me support,\n\nI cannot load Start.me. Diagnostic info:\n\n' + getDebugInfo()
+      )
+      return 'mailto:support@start.me?subject=' + subject + '&body=' + body
+    }
+  
+    function copyDebugInfo () {
+      return collectAsyncDiagnostics().then(function (text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(text)
+        }
+  
+        return new Promise(function (resolve, reject) {
+          try {
+            var textarea = document.createElement('textarea')
+            textarea.value = text
+            textarea.setAttribute('readonly', '')
+            textarea.style.position = 'absolute'
+            textarea.style.left = '-9999px'
+            document.body.appendChild(textarea)
+            textarea.select()
+            document.execCommand('copy')
+            document.body.removeChild(textarea)
+            resolve()
+          } catch (error) {
+            reject(error)
+          }
+        })
+      })
+    }
+  
+    function updateDisplayedDebugInfo (appContainer) {
+      var debugInfo = getDebugInfo()
+      var debugElement = appContainer.querySelector('[data-role="debug-info"]')
+      var supportLink = appContainer.querySelector('[data-role="support-link"]')
+  
+      if (debugElement) debugElement.textContent = debugInfo
+      if (supportLink) supportLink.href = buildSupportMailto()
+    }
+  
+    function showRecoveryMessage () {
+      if (bootState.recoveryShown || hasAppMounted()) return
+  
+      var appContainer = getAppContainer()
+      if (!appContainer) {
+        document.addEventListener('DOMContentLoaded', showRecoveryMessage, { once: true })
+        return
+      }
+  
+      bootState.recoveryShown = true
+      var debugInfo = getDebugInfo()
+  
+      appContainer.innerHTML = [
+        '<style>',
+        '.app-recovery{box-sizing:border-box;display:flex;align-items:flex-start;justify-content:center;min-height:100vh;padding:18vh 24px 24px;font-family:Arial,sans-serif;color:#2f4050;background:#fff;text-align:center;}',
+        '.app-recovery__card{width:100%;max-width:520px;}',
+        '.app-recovery__logo{display:block;width:168px;height:auto;margin:0 auto 28px;}',
+        '.app-recovery__title{margin:0 0 12px;font-size:24px;line-height:1.25;font-weight:700;}',
+        '.app-recovery__text{margin:0 0 20px;font-size:16px;line-height:1.5;color:#52616f;}',
+        '.app-recovery__actions{display:flex;flex-direction:column;gap:12px;align-items:center;}',
+        '.app-recovery__button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border:0;border-radius:6px;font-size:16px;font-weight:700;color:#fff;background:#2395ed;cursor:pointer;transition:background-color .16s ease,border-color .16s ease,color .16s ease;}',
+        '.app-recovery__button:hover{background:#1b86dc;}',
+        '.app-recovery__button--secondary{color:#2395ed;background:#fff;border:1px solid #2395ed;}',
+        '.app-recovery__button--secondary:hover{color:#1b86dc;background:#f4f9ff;border-color:#1b86dc;}',
+        '.app-recovery__button--danger{min-height:40px;margin-top:100px;padding:0 18px;font-size:14px;color:#b42318;background:#fff;border:1px solid #fda29b;}',
+        '.app-recovery__button--danger:hover{color:#912018;background:#fff6f5;border-color:#f97066;}',
+        '.app-recovery__button:focus{outline:3px solid rgba(35,149,237,.35);outline-offset:3px;}',
+        '@media (prefers-reduced-motion: reduce){.app-recovery__button{transition:none;}}',
+        '.app-recovery__help{margin:18px 0 0;font-size:14px;line-height:1.5;color:#6b7785;}',
+        '.app-recovery__help a{color:#2395ed;}',
+        '.app-recovery__details{margin-top:16px;text-align:left;}',
+        '.app-recovery__details summary{cursor:pointer;font-size:14px;color:#52616f;}',
+        '.app-recovery__steps{margin:10px 0 0;padding-left:20px;color:#52616f;font-size:14px;line-height:1.5;}',
+        '.app-recovery__steps li{margin:6px 0;}',
+        '.app-recovery__steps code{padding:1px 4px;border-radius:4px;background:#eef3f7;color:#2f4050;}',
+        '.app-recovery__debug{margin-top:8px;padding:12px;border-radius:6px;background:#f4f7fa;color:#52616f;font:12px/1.4 monospace;white-space:pre-wrap;word-break:break-word;max-height:180px;overflow:auto;}',
+        '.app-recovery__copy-status{min-height:18px;font-size:13px;color:#2f7d32;}',
+        '</style>',
+        '<div class="app-recovery" role="alert" aria-live="assertive">',
+        '<div class="app-recovery__card">',
+        '<img class="app-recovery__logo" src="/images/logo-recovery.svg" width="251" height="54" alt="Start.me">',
+        '<h1 class="app-recovery__title">Start.me has been updated</h1>',
+        '<p class="app-recovery__text">Please load the latest version to continue.</p>',
+        '<div class="app-recovery__actions">',
+        '<button class="app-recovery__button" type="button" data-action="recover">Load latest version</button>',
+        '<button class="app-recovery__button app-recovery__button--secondary" type="button" data-action="copy-debug">Copy diagnostic info</button>',
+        '</div>',
+        '<p class="app-recovery__copy-status" data-role="copy-status" aria-live="polite"></p>',
+        '<p class="app-recovery__help">Still stuck? Follow the troubleshooting steps below, or <a data-role="support-link" href="', buildSupportMailto(), '">email support</a>.</p>',
+        '<details class="app-recovery__details">',
+        '<summary>Troubleshooting steps</summary>',
+        '<ol class="app-recovery__steps">',
+        '<li>Click <strong>Load latest version</strong>. This refreshes Start.me app files and clears cached app data.</li>',
+        '<li>If this screen returns, close all Start.me tabs and open <code>https://start.me</code> again.</li>',
+        '<li>Safari on Mac: open Safari Settings &gt; Privacy &gt; Manage Website Data, search for <code>start.me</code>, remove matching entries, then reopen Start.me. If the Develop menu is enabled, also choose Develop &gt; Empty Caches.</li>',
+        '<li>Chrome: open <code>chrome://settings/content/all</code>, search for <code>start.me</code>, remove matching entries, then reopen Start.me.</li>',
+        '<li>Edge: open Start.me, click the icon next to the address bar, open Site permissions or Site settings, then delete stored data for Start.me.</li>',
+        '<li>If it still fails, click <strong>Copy diagnostic info</strong> and send it to support.</li>',
+        '</ol>',
+        '</details>',
+        '<details class="app-recovery__details">',
+        '<summary>Technical details</summary>',
+        '<pre class="app-recovery__debug" data-role="debug-info">', debugInfo.replace(/</g, '&lt;'), '</pre>',
+        '</details>',
+        '<button class="app-recovery__button app-recovery__button--secondary app-recovery__button--danger" type="button" data-action="reset-sign-out">Reset local data and sign out</button>',
+        '</div>',
+        '</div>'
+      ].join('')
+  
+      var recoverButton = appContainer.querySelector('[data-action="recover"]')
+      if (recoverButton) recoverButton.addEventListener('click', loadLatestStartMe)
+  
+      var resetSignOutButton = appContainer.querySelector('[data-action="reset-sign-out"]')
+      if (resetSignOutButton) resetSignOutButton.addEventListener('click', resetAndSignOut)
+  
+      var copyButton = appContainer.querySelector('[data-action="copy-debug"]')
+      var copyStatus = appContainer.querySelector('[data-role="copy-status"]')
+      if (copyButton) {
+        copyButton.addEventListener('click', function () {
+          copyDebugInfo()
+            .then(function () {
+              if (copyStatus) copyStatus.textContent = 'Diagnostic info copied.'
+            })
+            .catch(function () {
+              if (copyStatus) copyStatus.textContent = 'Could not copy automatically. Please copy the technical details below.'
+            })
+        })
+      }
+  
+      collectAsyncDiagnostics().then(function () {
+        updateDisplayedDebugInfo(appContainer)
+      }).catch(function (error) {
+        console.error('Failed to collect Start.me recovery diagnostics', error)
+      })
+    }
+  
+    function isFailedAppAsset (event) {
+      var target = event && event.target
+      var assetUrl = target && (target.src || target.href)
+      if (!assetUrl) return false
+  
+      return assetUrl.indexOf('/assets/') >= 0 && /\.js(\?|$)/.test(assetUrl)
+    }
+  
+    // A failed entry stylesheet <link> boots the app unstyled. Lazy chunk CSS is handled by
+    // reloadOnStaleChunk; this only catches the critical <head> stylesheets, and showRecoveryMessage's
+    // hasAppMounted() guard limits recovery to pre-mount failures so a running session is never disrupted.
+    function isFailedAppStylesheet (event) {
+      var target = event && event.target
+      if (!target || target.tagName !== 'LINK') return false
+  
+      var assetUrl = target.href
+      if (!assetUrl) return false
+  
+      return assetUrl.indexOf('/assets/') >= 0 && /\.css(\?|$)/.test(assetUrl)
+    }
+  
+    window.__startmeRecovery = {
+      showRecoveryMessage: showRecoveryMessage,
+      recordFailure: recordFailure,
+      hasShownRecovery: function () { return bootState.recoveryShown }
+    }
+  
+    window.addEventListener('error', function (event) {
+      if (isFailedAppAsset(event)) {
+        recordFailure(event.target.src || event.target.href, 'script')
+        showRecoveryMessage()
+      } else if (isFailedAppStylesheet(event)) {
+        recordFailure(event.target.href, 'stylesheet')
+        showRecoveryMessage()
+      }
+    }, true)
+  
+    document.addEventListener('DOMContentLoaded', function () {
+      var params = new URLSearchParams(window.location.search)
+      if (params.get(debugRecoveryParam) === '1') showRecoveryMessage()
+    })
+  })();
+</script>
+
+
+<script src="https://c.start.me/assets/application-BMyMcDCf.js" crossorigin="anonymous" type="module"></script><link rel="modulepreload" href="https://c.start.me/assets/vendor-QXgxP3eT.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://c.start.me/assets/stores-B25mmoPo.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://c.start.me/assets/icon-D3LlfnUo.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://c.start.me/assets/widgetsActions-Bvm3VQYX.js" as="script" crossorigin="anonymous"><link rel="stylesheet" href="https://c.start.me/assets/application-DDx4uQF6.css" media="screen" />
+<link rel="stylesheet" href="https://c.start.me/assets/stores-UfOOKzWz.css" media="screen" />
+</head>
+<body>
+<div id="app">
+<div aria-label="Loading" class="app-initial-loader" role="progressbar" style="position:fixed;top:0;left:0;right:0;z-index:9999;height:5px;overflow:hidden;cursor:progress;">
+<span class="app-initial-loader__rect" style="display:block;position:absolute;top:0;left:0;width:60%;height:100%;background:#2395ed;animation:app-initial-loader-slide 2s infinite linear"></span>
+</div>
+<style>
+@keyframes app-initial-loader-slide{0%{transform:translateX(-170%)}20%{transform:translateX(-140%)}60%{transform:translateX(40%)}100%{transform:translateX(170%)}}
+</style>
+
+</div>
+<script type="application/ld+json">
+[{"@context":"http://schema.org","@type":"Organization","name":"start.me","alternateName":"start.me B.V.","legalName":"start.me B.V.","logo":"https://c.start.me/assets/favicons/favicon-256-ad350f5a5c7891a89131b0974ab7a8ad0c8d295f6a0542a17fe3bb5382c6e943.png","url":"https://start.me","email":"support@start.me","sameAs":["https://facebook.com/startmePAGE","https://twitter.com/startme","https://www.linkedin.com/company-beta/5281275/","https://plus.google.com/+StartMe"],"location":{"@type":"PostalAddress","addressCountry":"NL","addressLocality":"Den Haag","postalCode":"2597JB","streetAddress":"Waalsdorperweg 16"}},{"@context":"http://schema.org","@type":"WebSite","name":"start.me","url":"https://start.me","potentialAction":{"@type":"SearchAction","target":"https://start.me/search/google?q={search_term_string}","query-input":"required name=search_term_string"}}]
+</script>
+
+<script>
+  (function() {
+    if('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js')
+          .catch(function (error) {
+            console.error('ServiceWorker failed to register', error)
+          });
+      })
+    }
+  })();
+</script>
+
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a53e348f7c539128',t:'MTc5MzU3MDc3Mg=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a53e348f7c539128',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"dda02017a39d4381894441b5c9020206","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
