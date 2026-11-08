@@ -1,5 +1,5 @@
 # Git Playbook — LCA MVP
-Última atualização: 31/10/2026 (Drael)
+Última atualização: 01/11/2026 (coordenação Drael + Codex)
 
 ## Invariantes
 - Repositório: **gmaltad-boop/lca-mvp** (privado), branch **main**. Fonte de verdade do código.
@@ -8,7 +8,8 @@
 - Mensagem de commit: curta, pt-BR, prefixo tipo `feat:` / `fix:` / `docs:` / `infra:`.
 
 ## Rota oficial de publicação
-- Autor: Drael, a partir da sandbox, pela **API REST do GitHub (git-data)**: blobs → trees → commit → `PATCH /git/refs/heads/main`.
+- Autor: coordenação Drael/Codex. O Codex usa o conector GitHub autorizado; o fluxo git-data cria árvore e commit e atualiza a branch com verificação do SHA anterior. Nesta POC, uma branch de revisão preserva a main até a decisão de incorporar.
+- O fluxo existente do Drael usa a API REST (git-data). A credencial da sandbox não deve ser copiada para o chat, o repositório ou os scripts do Codex.
 - Por que não git tradicional: a sandbox não tem binário git; o cliente Python (dulwich) falha em entregar credenciais basic-auth pelo cabo HTTP. A rota REST é determinística e devolve o SHA para conferência.
 - Comando: `python3 /workspace/gitpush.py "mensagem do commit"`. O script calcula os SHA locais, difere contra a árvore remota, sobe só o que mudou, cria o commit por cima do HEAD atual e sincroniza a referência local. Sem mudanças → sai sem commitar.
 - Token: vive em `/workspace/drael.credentials` (linha `GITHUB_PAT=`). Fine-grained, só o repositório lca-mvp, permissão mínima Contents: Read and write. Nunca vai para dentro do repositório.
@@ -16,15 +17,15 @@
 ## Rotação do token (quando: pós-lançamento 06/11 e a cada troca de fase)
 1. No GitHub: Settings → Developer settings → Fine-grained tokens → apagar o token atual (morte imediata).
 2. Criar `drael-lca-N`: acesso somente ao repositório lca-mvp, Contents: Read and write.
-3. Colar o token novo no chat uma única vez (o canal do chat já é a classe de risco aceita; rotação mantém a vida útil curta).
+3. Configurar a credencial pelo fluxo seguro do serviço ou gerenciador local apropriado. Nunca colar token no chat, em issues, em PRs ou em arquivos versionados.
 4. Drael atualiza `drael.credentials`, confere `GET /user` (espera 200 + `gmaltad-boop`) e faz um push-teste.
 
 ## Fallback manual (Guilherme, Windows / PowerShell 5.1) — só se a sandbox estiver fora
+Usar o conector GitHub autorizado ou o gerenciador de credenciais do Git. Nunca incluir token na URL do remoto, no histórico do terminal ou no corpo de mensagens.
+
 ```powershell
-$env:T = '<token>'
-Invoke-RestMethod -Uri "https://api.github.com/user" -Headers @{Authorization="Bearer $($env.T)"}
-git remote set-url origin "https://x-access-token:$($env.T)@github.com/gmaltad-boop/lca-mvp.git"
-git push origin main
+git remote set-url origin https://github.com/gmaltad-boop/lca-mvp.git
+git push origin <branch-revisada>
 ```
 Aposar: comunicar no chat e conferir o histórico para reconciliar com a referência da sandbox.
 

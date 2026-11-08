@@ -1,0 +1,81 @@
+{
+  "executor": "OpenHands Agent Canvas 1.34.0/SDK1.58.1",
+  "modelo": "openai/gpt-5.1",
+  "fonte": "transcricao.md",
+  "limitacoes": "Leitura parcial: apenas oito blocos selecionados em input/contexto-selecionado.md nesta tentativa; a transcricao completa nao foi revista integralmente.",
+  "itens": [
+    {
+      "id": "1",
+      "minuto_origem": "13:54",
+      "trecho_curto": "[13:54] Microphone: tem uma corresponsabilidade na contratação, na escolha, em dar munição, em dar informação ali para as pessoas no dia a dia, e que ",
+      "modelo_estrutura": "relato de corresponsabilidade na contratacao de servico e impacto da maturidade do cliente nas expectativas",
+      "o_que_a_fonte_sustenta": "A fala descreve clientes que querem resultado imediato, terceirizam a culpa para a agencia e reagem mal quando o dinheiro e visto como arriscado, enquanto clientes mais maduros aceitam melhor que pode dar errado.",
+      "limite": "Percepcao de um prestador sobre perfis de clientes; nao ha medicao formal de satisfacao ou de retorno financeiro.",
+      "hipotese_lca": "No concierge LCA, pode-se hipotetizar que alinhar por escrito a corresponsabilidade do fisioterapeuta sobre informacoes e prazos reduza frustracoes com o servico, sem prometer resultado financeiro.",
+      "tarefa_proposta": "Revisar amostra de orientacoes iniciais ja usadas com fisioterapeutas e verificar se explicam claramente o que o LCA faz, o que depende do profissional e que erros sao possiveis.",
+      "metrica_proposta": "Contagem manual futura de quantas duvidas recorrentes em atendimentos se referem a expectativas desalinhadas sobre escopo ou velocidade do concierge.",
+      "resultado_lca_observado": "nao medido"
+    },
+    {
+      "id": "2",
+      "minuto_origem": "18:08",
+      "trecho_curto": "[18:08] Microphone: Cara, acho que o primeiro é saber se ela domina o meu segmento de atuação. Se ela conhece um pouco do meu segmento de atuação. Ach",
+      "modelo_estrutura": "criterios de escolha de fornecedor baseados em dominio do segmento e referencias concretas",
+      "o_que_a_fonte_sustenta": "O trecho mostra que o contratante valoriza parceiro que conhece a terminologia do seu mercado, ja atendeu clientes semelhantes e consegue oferecer referencias verificaveis de casos anteriores.",
+      "limite": "Depende da avaliacao subjetiva do cliente sobre afinidade de linguagem e sucesso passado; nao e uma garantia de desempenho futuro.",
+      "hipotese_lca": "Para o LCA, pode-se supor que deixar visivel em materiais internos quais rotinas e termos administrativos da fisioterapia o concierge domina facilite a confianca do profissional sem prometer ganho de faturamento.",
+      "tarefa_proposta": "Conferir se a documentacao atual de apresentacao do concierge aos fisioterapeutas usa linguagem conhecida do segmento e exemplos reais de uso, sem adicionar novos dados clinicos.",
+      "metrica_proposta": "Em revisao posterior, contar quantas vezes fisioterapeutas pedem esclarecimento basico sobre termos administrativos que ja estao descritos na apresentacao padrao.",
+      "resultado_lca_observado": "nao medido"
+    },
+    {
+      "id": "3",
+      "minuto_origem": "19:38",
+      "trecho_curto": "[19:38] Microphone: que nessa também, poxa, se eu nunca trabalhei com agência, então eu preciso de alguma agência que trabalha normalmente, tem uma di",
+      "modelo_estrutura": "distincao entre fornecedor que estrutura do zero e fornecedor de manutencao",
+      "o_que_a_fonte_sustenta": "A fala diferencia agencias e profissionais que sabem montar uma estrutura do zero daqueles focados em manter e escalar algo ja pronto, e diz que a escolha deve levar em conta a etapa atual do negocio.",
+      "limite": "Exemplo anecdotico; nao define que um tipo de fornecedor seja sempre melhor, apenas ilustra adequacao ao contexto.",
+      "hipotese_lca": "No LCA, pode-se levantar a hipotese de que fisioterapeutas em inicio de uso precisem de instrucoes mais guiadas de organizacao inicial, enquanto quem ja esta rodando o concierge pode demandar mais apoio de manutencao da rotina.",
+      "tarefa_proposta": "Olhar amostra de instrucoes de onboarding ja existentes e checar se ha versoes diferentes para quem nunca usou o concierge e para quem ja vem de ciclos anteriores.",
+      "metrica_proposta": "Numero de atendimentos em que surgem duvidas basicas de inicio mesmo apos envio das instrucoes de onboarding, medido em revisao manual futura.",
+      "resultado_lca_observado": "nao medido"
+    },
+    {
+      "id": "4",
+      "minuto_origem": "39:27;40:38;42:05",
+      "trecho_curto": "[39:27] Microphone: Cara, eu acho que o primeiro funcionário que você deve contratar é aquele que você consegue supervisionar. Mais fácil, né? Então e",
+      "modelo_estrutura": "comparacao entre contratar primeiro para a area tecnica dominante e contratar primeiro para vendas",
+      "o_que_a_fonte_sustenta": "Um participante defende contratar alguem na area em que ele ja e forte para poder supervisionar melhor; o outro relata que, com a experiencia, priorizaria montar time de vendas antes de ampliar o operacional, pois o gargalo virou falta de horas em comercial.",
+      "limite": "Relatos de duas trajetorias especificas de donos de agencia; nao ha consenso nem comparacao numerica entre resultados das estrategias.",
+      "hipotese_lca": "Para o concierge LCA, essa divergencia pode inspirar a hipotese de observar se, na operacao atual, o maior gargalo esta na capacidade de produzir entregas administrativas ou na chegada de novos fisioterapeutas interessados, sem propor servicos de marketing.",
+      "tarefa_proposta": "Reunir, em revisao manual, registros existentes de tempo de fila para novas demandas e de esforco gasto para iniciar novos contratos, apenas para notar se hoje o gargalo parece mais operacional ou de captacao.",
+      "metrica_proposta": "Comparacao simples, em analise posterior, entre estimativas de tempo medio para iniciar atendimentos de novos fisioterapeutas e tempo medio para concluir tarefas administrativas ja assumidas.",
+      "resultado_lca_observado": "nao medido"
+    },
+    {
+      "id": "5",
+      "minuto_origem": "68:06",
+      "trecho_curto": "[68:06] Microphone: KPIs e números para eu poder medir a saúde do meu negócio? Eu acho que sempre é uma combinação de alguns, né? Mas aí vai depender ",
+      "modelo_estrutura": "discussao de margem de lucro variando conforme escala e necessidade de enxergar gastos proprios",
+      "o_que_a_fonte_sustenta": "O trecho comenta que a mesma margem percentual pode significar coisas diferentes em escala pequena, cita exemplos de gastos pouco monitorados e usa faixas de margem apenas como norte para empreendedores com pouca familiaridade com metricas.",
+      "limite": "Orientacao geral de mentoria para donos de agencia; os numeros citados nao sao parametro para o LCA nem substituem analise de custos propria.",
+      "hipotese_lca": "No LCA, pode-se supor que entender melhor quanto tempo e retrabalho administrativos o concierge consome por fisioterapeuta ajude a equipe a enxergar custos de forma menos intuitiva, sem definir margens ou precos.",
+      "tarefa_proposta": "Conferir, em periodo delimitado, quantas horas de equipe foram registradas nas tarefas administrativas ja existentes por fisioterapeuta, apenas para formar uma base de observacao interna.",
+      "metrica_proposta": "Estimativa futura de horas medias gastas pelo concierge em tarefas administrativas por fisioterapeuta atendido, sem converter em recomendacao de margem.",
+      "resultado_lca_observado": "nao medido"
+    },
+    {
+      "id": "6",
+      "minuto_origem": "80:16",
+      "trecho_curto": "[80:16] Microphone: Ele precisa, cara, se o dono de agência não tá ganhando dinheiro que ele tá, se ele não tá confortável com o dinheiro, ele precifi",
+      "modelo_estrutura": "relato de donos de agencia que entregam muito e cobram pouco por nao refazerem a conta de preco",
+      "o_que_a_fonte_sustenta": "A fala diz que muitos donos de agencia assumem preco de mercado sem calcular custos, acabam entregando mais do que cobram e seguem desconfortaveis com o dinheiro por nao fazerem uma conta simples.",
+      "limite": "Descricao de comportamento comum observada pelo entrevistado; nao define tabela de precos nem politica ideal para outros negocios.",
+      "hipotese_lca": "No LCA, pode-se apenas considerar se o volume de tarefas administrativas que o concierge aceita hoje esta coerente com o que ja foi comunicado a fisioterapeutas, sem alterar precos ou criar serviços novos.",
+      "tarefa_proposta": "Comparar, em amostra pequena, o escopo descrito em materiais ja usados para oferecer o concierge a fisioterapeutas com o tipo de tarefas administrativas que de fato aparecem nos registros, sem mudar preco automaticamente.",
+      "metrica_proposta": "Em analise posterior, proporcao de atendimentos em que surgem pedidos claramente fora do escopo declarado, verificada manualmente.",
+      "resultado_lca_observado": "nao medido"
+    }
+  ],
+  "conclusao": "As falas analisadas sugerem padroes de expectativa, maturidade e decisao de donos de agencia que podem inspirar hipoteses operacionais para o concierge LCA, mas nao comprovam demanda, eficacia clinica ou resultados financeiros."
+}
